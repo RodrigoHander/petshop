@@ -10,7 +10,37 @@
     <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  
+  <body class="app">
+   <div  id = "sedebar">
+   <div>
+   <a href="/"<h2>PetShop</h2></a>
+   </div>
+   <ul>
+     <li>
+   
+     <li>
+      <a href="/">home</a>
+   </li>
+   <li>
+       <a  href="/clients">clients</a> 
+   </li >
+     <li>
+       <a  href="/pets">pets</a>
+   </li>
+      
+
+    </ul>
+
+  </div>
+  <div id="navbar">
+
+</div>
+
+  <div id="content">
+    <div class="card">
+      <%= yield %>
+  </div>
+</div> 
   </body>
 </html>
