@@ -7,33 +7,41 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
-  
   <body class="app">
-   <div  id = "sedebar">
-   <div>
-   <a href="/"<h2>PetShop</h2></a>
+    
+     <div id="sidebar">
+     <div class="header"></div>
+     <a href="/"><h2>PETSHOP</h2></a>
+      <ul>
+        <li>
+          <a href="/">home</a>
+        </li>
+        <li>
+          <a href="clients">clients</a>
+        </li>
+        <li>
+          <a href="pets">pets</a>
+        </li>
+    
+      </ul>
+
+</div>
+
+   <div id="navbar">
+    <%if user_signed_in?%>
+   <div class="dropdown">
+    <a class="dropbtn"><%=current_user.email%></a>
+   <div class="dropdowm-content">
+     <%= link_to"sair", destroy_user_session_path, method: :delete%>
    </div>
-   <ul>
-     <li>
-   
-     <li>
-      <a href="/">home</a>
-   </li>
-   <li>
-       <a  href="/clients">clients</a> 
-   </li >
-     <li>
-       <a  href="/pets">pets</a>
-   </li>
-      
-
-    </ul>
-
-  </div>
-  <div id="navbar">
+   </div>
+     <%else%>
+     <%=link_to "entrar", new_user_session_path %>
+     
+  <%end%>
 
 </div>
 
@@ -41,6 +49,7 @@
     <div class="card">
       <%= yield %>
   </div>
-</div> 
+</div>
+
   </body>
 </html>

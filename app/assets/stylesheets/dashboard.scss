@@ -64,7 +64,7 @@
         color: black;
         
         a {
-            color: black;
+            color: rgb(245, 241, 9);
         }
     }
 }
@@ -72,6 +72,9 @@
 #navbar {
     grid-area: navbar;
     background-color: #fff;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 #content {
