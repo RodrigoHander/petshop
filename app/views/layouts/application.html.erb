@@ -32,16 +32,16 @@
 
    <div id="navbar">
     <%if user_signed_in?%>
-   <div class="dropdown">
-    <a class="dropbtn"><%=current_user.email%></a>
-   <div class="dropdowm-content">
-     <%= link_to"sair", destroy_user_session_path, method: :delete%>
-   </div>
-   </div>
-     <%else%>
-     <%=link_to "entrar", new_user_session_path %>
+      <div class="dropdown">
+        <a class="dropbtn"><%=current_user.email%></a>
+          <div class="dropdown-content">
+            <%= link_to"sair", destroy_user_session_path, method: :delete %>
+          </div>
+      </div>
+    <%else%>
+      <%=link_to "entrar", new_user_session_path %>
      
-  <%end%>
+    <%end%>
 
 </div>
 
